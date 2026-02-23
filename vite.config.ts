@@ -4,5 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/poultry-track/', // Sesuai nama repository kamu
+  // WAJIB: diawali dan diakhiri garis miring
+  base: '/poultry-track/', 
 })
