@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: 'main' # Pastikan nama branch kamu memang 'main'
+    branches: 'main'
 
 permissions:
   contents: read
@@ -15,28 +15,19 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-
       - name: Install Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 20
           cache: 'npm'
-
       - name: Install dependencies
         run: npm install
-
       - name: Build
-        # Masukkan kunci rahasia agar build tidak error
-        env:
-          VITE_SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          VITE_SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
         run: npm run build
-
       - name: Upload Artifacts
         uses: actions/upload-pages-artifact@v3
         with:
-          # Pastikan ini folder 'dist' karena Vite menyimpannya di sana
-          path: dist
+          path: dist # Ini folder hasil rakitan yang mau kita pajang
 
   deploy:
     needs: build_site
