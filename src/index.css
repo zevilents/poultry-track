@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #13ec13;
+}
+
+@layer components {
+  .nav-btn {
+    @apply flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-slate-500 hover:bg-slate-50 transition-colors cursor-pointer;
+  }
+  .nav-btn.active {
+    background-color: rgba(19, 236, 19, 0.1);
+    color: var(--color-primary);
+  }
+  .input-field {
+    @apply w-full rounded-xl border-slate-200 bg-white py-3 px-4 transition-all outline-none border;
+  }
+  .input-field:focus {
+    @apply ring-2 ring-green-500/20 border-green-500;
+  }
+  .btn-primary {
+    @apply bg-[#13ec13] hover:bg-green-500 text-slate-900 font-bold rounded-xl flex items-center justify-center gap-2 transition-all shadow-lg cursor-pointer;
+  }
+  .glass-card {
+    @apply bg-white border border-slate-100 rounded-3xl shadow-xl;
+  }
+}
