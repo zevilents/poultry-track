@@ -4,6 +4,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  // WAJIB: Harus sama persis dengan nama repository di GitHub
+  // Harus sama dengan nama repository di gambar kamu
   base: '/poultry-track/', 
 })
